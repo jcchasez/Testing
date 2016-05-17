@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8">
+    <title>Object Oriented Javascript</title>
+</head>
+
+<body>
+ <script type="text/javascript">
+  var customer = {
+      name:"Jin Chen",
+      speak: function(){
+          return "My name is " + this.name;
+      },
+      
+      address:{
+          street: '123 Main St',
+          city:"Los Angeles",
+          state: "CA"
+      }
+  };
+     
+     document.write(customer.speak() + "<br>");
+     document.write(customer.name + " Lives at " +customer.address.street + "<br>");
+     
+customer.address.country = "US";
+     document.write(customer.address.country + "<br>");
+     
+     
+     function Person(name,street){
+         this.name = name;
+         this.street = street;
+         
+         this.info = function(){
+             return "My name is " + this.name + " and I live on " + this.street;
+         }
+     }
+     
+     var jinchen = new Person("jin chen","222 main st");
+     document.write(jinchen.info() + "<br>");
+     document.write("jin is a Person " + (jinchen instanceof Person) +"<br>");
+     function changeName(person){
+         person.name = "ken Smith";
+     }
+     changeName(jinchen);
+     document.write("jin became "+ jinchen.name + "<br>");
+     
+     var person1 = new Person("Paul", "222 Main st");
+     var person2 = new Person("Paul", "222 Main st");
+     
+     document.write("Are they equal " + (person1 ===person2) +"<br>");
+    
+</script>   
+    
+</body>
+    
+</html>
